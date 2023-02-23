@@ -1,0 +1,855 @@
+:root {
+  --asideColor: rgb(255, 255, 255);
+  --homeColor: rgb(214, 214, 214);
+  --elementsColor: rgb(75, 75, 75);
+  --buttonsColor: rgb(255, 0, 98);
+  --boxshadowColor: rgb(228, 228, 228);
+  ---mainColor: rgb(255, 0, 98);
+  ---shapeColor: rgb(255, 255, 255);
+  ---secondColor: rgb(0, 0, 0);
+  ---white: rgb(192, 192, 192);
+  ---mainPadding: 2%;
+  --transition: all .4s ease;
+}
+html {
+  font-size: 20px;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Quando;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+  outline: none;
+  color: var(--elementsColor);
+  font-family: 'Space Grotesk', sans-serif;
+}
+/* ------------------------------------------------aside content styling ------------------------------- */
+ .toggle__icon {
+  position: fixed;
+  width: 2rem;
+  height: 2rem;
+  left: .5rem;
+  top: .5rem;
+  display: none;
+  z-index: 9999;
+} 
+.toggle__icon i {
+  font-size: 1rem;
+  color: var(---mainColor);
+}
+aside {
+  overflow: hidden;
+  z-index: 10;
+  width: 13.5rem;
+  height: 100%;
+  left: 0;
+  background-color: var(--asideColor);
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 0.05rem solid var(--buttonsColor);
+  box-shadow: 0.01rem 0 0 0.02rem var(--buttonsColor);
+  transition: var(--transition);
+}
+aside .logo {
+  padding-top: 5rem;
+}
+aside .logo a {
+  font-size: 3rem;
+  text-transform: capitalize;
+  color: var(--elementsColor);
+}
+aside .logo a span {
+  font-size: 8rem;
+  font-family: penna;
+  color: var(--buttonsColor);
+}
+aside .nav li {
+  display: block;
+  margin-top: 1.5rem;
+}
+aside .nav li a {
+  font-size: 1.2rem;
+  color: var(--elementsColor);
+  border-bottom: 0.1rem solid var(--borderColor);
+}
+aside .nav li:first-child a {
+  color: var(--buttonsColor);
+}
+aside .nav li:first-child:hover a {
+  transition: all 1s;
+  color: var(--elementsColor);
+  border-bottom: 0.1rem solid var(--elementsColor);
+}
+aside .nav li a:hover {
+  transition: all 0.2s;
+  color: var(--buttonsColor);
+  border-bottom: 0.1rem solid var(--buttonsColor);
+}
+aside .nav li a i {
+  color: var(--buttonsColor);
+  margin-right: 1rem;
+}
+/*---------------------------------- main content of home page ------------------------------------*/
+.main-content {
+  padding-left: 13rem;
+    transition: var(--transition);
+}
+.home {
+  height: 100vh;
+  z-index: 0;
+  background-color: var(--homeColor);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 1rem;
+  animation: home 0.5s linear 0.4s;
+}
+
+@keyframes home {
+  0% {
+    width: 1%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.home .home-content {
+  display: grid;
+  gap: 1rem;
+}
+.home .home-content h3 {
+  font-size: 1.5rem;
+}
+.home .home-content h4 {
+  position: relative;
+  font-size: 1.3rem;
+  width: 20rem;
+  overflow: hidden;
+}
+.home-content h4 span:last-child {
+  color: var(--buttonsColor);
+}
+.home-content h4 span:last-child {
+  position: relative;
+}
+.home-content h4 span:last-child::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  background-color: var(--homeColor);
+  height: 100%;
+  width: 100%;
+  border-left: 0.2rem solid var(--buttonsColor);
+  animation: animate 4s steps(12) infinite;
+}
+@keyframes animate {
+  40%,
+  60% {
+    left: 100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+.home .home-content p {
+  font-size: 1.2rem;
+}
+.home .home-content button,
+.home-content a {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: var(--buttonsColor);
+  cursor: pointer;
+  width: 10rem;
+  border-radius: 1rem;
+  color: black;
+  font-weight: bo;
+  border: 0.1rem solid transparent;
+  display: flex;
+  justify-content: center;
+}
+.home .home-content button:hover,
+.home-content a:hover {
+  border: 0.1rem solid var(--buttonsColor);
+  background-color: white;
+  color: var(--buttonsColor);
+  transition: all 0.6s;
+}
+.home .home-content p span {
+  color: var(--buttonsColor);
+  font-weight: bolder;
+}
+.home .image {
+  position: relative;
+  padding-right: 2rem;
+}
+.home .image img {
+  width: 10rem;
+  height: 12rem;
+  border-radius: 1rem;
+  border: 0.1rem solid var(--buttonsColor);
+}
+/* -------------------------about section------------------------------------------------------ */
+.about-content {
+  max-width: 1100px;
+  width: 100%;
+  background-color: var(--homeColor);
+  padding: 1rem;
+  height: fit-content;
+}
+.about-content .content {
+  display: grid;
+  gap: 2rem;
+  padding: 1rem 2rem;
+}
+.about-content .content h2 {
+  width: 8rem;
+  border-bottom: 0.15rem solid var(--buttonsColor);
+  position: relative;
+}
+.about-content .content h2::before {
+  position: absolute;
+  content: "";
+  width: 6rem;
+  height: 0.15rem;
+  background-color: var(--buttonsColor);
+  top: 2.15rem;
+}
+.about-content .information {
+  display: flex;
+  justify-content: space-between;
+}
+/* information content */
+.information {
+  display: flex;
+}
+.information .left {
+  width: 65%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.information .left div {
+  width: 14rem;
+  height: 1.5rem;
+  margin: 0.6rem;
+  border-bottom: 0.05rem solid var(--buttonsColor);
+}
+.information .left div p {
+  color: var(--buttonsColor);
+  font-size: 0.9rem;
+  font-weight: bolder;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.information .left div p::before {
+  position: absolute;
+  content: "";
+  left: -1rem;
+  width: 0.2rem;
+  height: 0.2rem;
+  border-radius: 50%;
+  background-color: var(--buttonsColor);
+}
+.information .left div p span {
+  margin-left: 0.5rem;
+  font-size: 0.7rem;
+  font-weight: bolder;
+}
+.right {
+  padding: 1.1rem;
+  width: 30%;
+  display: grid;
+}
+.right h3 {
+  font-size: 1.2rem;
+  color: var(--buttonsColor);
+  position: relative;
+}
+.right h3::before {
+  position: absolute;
+  content: "";
+  width: 3.5rem;
+  height: 0.1rem;
+  background-color: var(--buttonsColor);
+  top: 1.6rem;
+  left: 2.5rem;
+}
+.right .skills {
+  position: relative;
+}
+.right .skills::before {
+  position: absolute;
+  content: "";
+  width: 0.1rem;
+  height: 80%;
+  top: 1.28rem;
+  background-color: var(--buttonsColor);
+}
+.right .skills li {
+  display: block;
+  margin: 1rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+.right .skills li::before {
+  position: absolute;
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--buttonsColor);
+  border-radius: 50%;
+  left: -1.45rem;
+}
+.right .skills li a {
+  padding: 0.3rem 1rem;
+  background-color: var(--buttonsColor);
+  border-radius: 1rem;
+  color: white;
+  font-size: 0.7rem;
+}
+/* information ending part */
+/* pre-education starting part */
+.pre-ed {
+  display: flex;
+}
+.pre-ed .previous-ex,
+.pre-ed .education {
+  width: 45%;
+  background-color: var(--asideColor);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-left: 1rem;
+  box-shadow: 0.2rem 0.2rem 0.2rem 0.3rem var(--boxshadowColor),
+    inset 0.2rem 0.2rem 0.2rem 0.3rem var(--boxshadowColor);
+}
+.pre-ed .previous-ex div,
+.pre-ed .education div {
+  margin-top: 1rem;
+  padding-left: 1rem;
+}
+.pre-ed .previous-ex h3,
+.pre-ed .education h3 {
+  font-size: 90%;
+}
+.pre-ed .previous-ex h3 i,
+.pre-ed .education h3 i {
+  margin-right: 1rem;
+  color: var(--buttonsColor);
+  font-size: 0.8rem;
+}
+.pre-ed .previous-ex h4 i,
+.pre-ed .education h4 i {
+  margin-right: 0.5rem;
+  color: var(--buttonsColor);
+}
+.pre-ed .previous-ex h4,
+.pre-ed .education div h4 {
+  font-size: 80%;
+}
+.pre-ed .previous-ex div h5,
+.pre-ed .education div h5 {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+.pre-ed .previous-ex div p,
+.pre-ed .education div p {
+  font-weight: bold;
+  font-size: 80%;
+  display: flex;
+  align-items: center;
+}
+.pre-ed .previous-ex div p::before,
+.pre-ed .education div p::before {
+  position: absolute;
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--buttonsColor);
+  margin-left: -1rem;
+}
+/* pre -education end part */
+/* ----------------------services content start */
+.services {
+  max-width: 1100px;
+  width: 100%;
+  background-color: var(--homeColor);
+  padding: 1rem;
+  height: fit-content;
+}
+.services h3 {
+  display: block;
+}
+.services .services-content {
+  display: grid;
+  margin-top: 2rem;
+grid-template-columns: 1fr 1fr;
+gap: 1rem;
+}
+.services .services-content .box {
+  background-color: var(--asideColor);
+  border-radius: 0.5rem;
+  box-shadow: 0.1rem 0.1rem 0.1rem 0.3rem var(--boxshadowColor),
+    inset 0.1rem 0.1rem 0.1rem 0.3rem var(--boxshadowColor);
+  display: flex;
+  padding: 2rem 2rem;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 1rem;
+}
+.services .services-content .box .icon i {
+  font-size: 2rem;
+  color: var(--buttonsColor);
+}
+.services .services-content .box h4 {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+.services .services-content .box p {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+.services .services-content .box:hover {
+  background-color: var(--buttonsColor);
+  cursor: pointer;
+}
+.services .services-content .box:hover i,
+.box:hover h4,
+.box:hover p {
+  color: var(--asideColor);
+  transition: all 0.5s;
+}
+/* ----------------------services content end */
+/* ----------------------Portfolio content start */
+.portfolio {
+  max-width: 1100px;
+  width: 100%;
+  background-color: var(--homeColor);
+  padding: 1rem;
+  height: fit-content;
+  display: grid;
+}
+.portfolio .portfolio-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.portfolio h3 {
+  color: var(--buttonsColor);
+  width: 7rem;
+  position: relative;
+}
+.portfolio h5 {
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+.portfolio h3::first-letter {
+  color: black;
+  font-size: 1.5rem;
+}
+.portfolio h3::before {
+  position: absolute;
+  content: "";
+  width: 5rem;
+  top: 1.8rem;
+  height: 0.1rem;
+  background-color: var(--buttonsColor);
+}
+.portfolio h3::after {
+  position: absolute;
+  content: "";
+  width: 4rem;
+  top: 2rem;
+  left: 0;
+  height: 0.1rem;
+  background-color: var(--buttonsColor);
+}
+.portfolio .portfolio-content .image {
+  width: 30%;
+  border-radius: 0.5rem;
+  box-shadow: 0.1rem 0.1rem 0.1rem 0.3rem var(--boxshadowColor),
+    inset 0.1rem 0.1rem 0.1rem 0.3rem var(--boxshadowColor);
+  display: flex;
+  border: 0.3rem solid var(--asideColor);
+  flex-direction: column;
+  align-items: center;
+  height: 12rem;
+  margin-right: 0.6rem;
+  overflow: hidden;
+}
+.portfolio .portfolio-content .image img {
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  transition: 0.3s;
+}
+.portfolio-content .image:hover img {
+  opacity: 1;
+  transform: rotate(10deg);
+}
+/* ----------------------Portfolio content end */
+/* connected information  start*/
+.connected {
+  max-width: 1100px;
+  width: 100%;
+  background-color: var(--homeColor);
+  padding: 1rem;
+  height: fit-content;
+}
+.connected .contact {
+  display: flex;
+  flex-direction: column;
+}
+.connected h3,
+.services h3 {
+  color: var(--buttonsColor);
+  position: relative;
+  font-size: 1.5rem;
+}
+.connected h3::first-letter,
+.services h3::first-letter {
+  color: black;
+  font-size: 1.5rem;
+}
+.connected h3::before,
+.services h3::before {
+  position: absolute;
+  content: "";
+  width: 7rem;
+  top: 2rem;
+  left: 1rem;
+  height: 0.1rem;
+  background-color: var(--buttonsColor);
+}
+.connected h3::after {
+  position: absolute;
+  content: "";
+  width: 4rem;
+  top: 2.3rem;
+  left: 1rem;
+  height: 0.1rem;
+  background-color: var(--buttonsColor);
+}
+.connected .contact {
+  display: flex;
+  align-items: center;
+}
+.connected .contact .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+.contact .content h4 {
+  font-weight: bolder;
+  font-size: 1.8rem;
+  color: var(--buttonsColor);
+}
+.contact .content h6 {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.connected .contact .info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+.connected .contact .info div {
+  width: 25%;
+  height: fit-content;
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact .info div i {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: var(--buttonsColor);
+}
+.contact .info div h6 {
+  line-height: 2rem;
+  font-size: 1.4rem;
+}
+.contact .info div p {
+  font-size: 0.9rem;
+  font-weight: bolder;
+}
+.textarea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+.textarea textarea {
+  resize: none;
+  background-color: var(---white);
+  border-radius: 1rem;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+  letter-spacing: 0.01rem;
+  width: 90%;
+}
+.textarea textarea::placeholder {
+  font-size: 1.1rem 1.5rem;
+}
+.textarea button {
+  padding: 0.5rem 1.1rem;
+  cursor: pointer;
+  width: 8rem;
+  font-size: 1.2rem;
+  color: white;
+  border-radius: 1rem;
+  background-color: var(--buttonsColor);
+  border: 0.1rem solid transparent;
+}
+.textarea button:hover {
+  border: 0.1rem solid var(--buttonsColor);
+  background-color: white;
+  color: var(--buttonsColor);
+  transition: all 0.2s;
+  font-weight: bold;
+}
+/* login form */
+.login {
+  position: relative;
+  top: 5rem;
+  width: 20rem;
+  height: 30rem;
+  overflow: hidden;
+  border-radius: 1rem;
+  background-color: var(---mainColor);
+  position: relative;
+  display: grid;
+  align-content: space-evenly;
+  padding: 0 0.9rem;
+}
+.username,
+.password {
+  position: relative;
+  width: 13rem;
+  padding: 1rem 0.5rem;
+  top: 3rem;
+  margin: 1rem 0;
+  border-bottom: 0.1rem solid var(---mainColor);
+  z-index: 5;
+}
+.username i,
+.password i {
+  color: var(---mainColor);
+  position: absolute;
+  top: 0.3rem;
+  left: 0;
+  font-size: 0.8rem;
+  z-index: 2;
+}
+.username input,
+.password input {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  border: none;
+  padding: 0.1rem 0.3rem;
+  width: 100%;
+  z-index: 6;
+  font-size: 1rem;
+}
+.username input::placeholder,
+input:focus,
+.password input::placeholder,
+input:focus {
+  font-size: 0.9rem;
+  color: var(---mainColor);
+  font-weight: bold;
+  outline: none;
+}
+.btn {
+  margin-left: 1.5rem;
+  padding: 0.4rem 0.8rem;
+  color: var(---mainColor);
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 1.1rem;
+  word-spacing: -0.1rem;
+  cursor: pointer;
+  margin-top: 6rem;
+  box-shadow: inset 0 0 0.3rem 0.3rem white,
+    inset 0 0 0.3rem 0.3rem var(--buttonsColor) 0.1rem 0.1rem 0.1rem
+      var(--buttonsColor);
+}
+.btn i {
+  color: var(---mainColor);
+  margin-left: 2rem;
+  transform: rotate(40deg);
+}
+.loginvia {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.icons {
+  display: flex;
+  margin-left: 7rem;
+  align-items: center;
+  height: 2rem;
+  z-index: 5;
+}
+.icons i {
+  margin-left: 0.8rem;
+  font-size: 1.5rem;
+  color: var(---white);
+  z-index: 5;
+  cursor: pointer;
+}
+
+.via {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-top: 4rem;
+  margin-left: 8rem;
+  font-size: 1.2rem;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  word-spacing: -0.1rem;
+  cursor: pointer;
+  z-index: 5;
+}
+/* the shapes of the form */
+.login span:nth-child(1) {
+  clip-path: polygon(0% 0%, 35% 0%, 95% 40%, 0% 90%);
+  z-index: -1;
+  width: 18rem;
+  height: 30rem;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.login span:nth-child(2) {
+  clip-path: circle(50%);
+  width: 12rem;
+  height: 12rem;
+  background-color: var(---shapeColor);
+  position: absolute;
+  bottom: 10rem;
+  right: 2rem;
+  z-index: -5;
+}
+.login span:nth-child(3) {
+  clip-path: circle(50%);
+  width: 12rem;
+  height: 12rem;
+  background-color: var(---shapeColor);
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  z-index: -5;
+}
+/* connected information end */
+/*  the btn up */
+.btn-up {
+  position: fixed;
+  right: .4rem;
+  bottom: .5rem;
+  background-color: transparent;
+  opacity: 0;
+  transition: var(--transition);
+}
+.btn-up i {
+  font-size: 2rem;
+  color: var(---mainColor);
+    transition: var(--transition);
+}
+.btn-up.show {
+  opacity: 1;
+}
+.btn-up.show i {
+  font-size: 2.5rem;
+}
+/* the part of the intersection observer */ 
+
+/* responsive website */
+@media screen  and (max-width: 1024px){
+  html {
+    font-size: 18px;
+  }
+  .toggle__icon {
+    display: flex;
+    position: fixed;
+    top: .5rem;
+    left: .5rem;
+    width: 2rem;
+    height: 2rem;
+  }
+  .toggle__icon i {
+    font-size: 1rem;
+    color: var(---mainColor);
+  }
+  .aside_active {
+    width: 0;
+    position: fixed;
+  }
+  .main_active {
+    padding-left:0;
+  }
+}
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 16px;
+  }
+  .home {
+    padding: 2rem;
+    flex-direction: column;
+    height: fit-content;
+    gap: 2rem;
+  }
+  .about-content .information,.portfolio .portfolio-content {
+flex-direction: column;
+align-items: center;
+gap: 1.5rem;
+}
+.services .services-content {
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+.services-content .box {
+  width: 90%;
+}
+.portfolio .portfolio-content .image {
+width: 80%;
+}
+.contact .content h4 {
+  font-size: 90%;
+}
+.connected .contact .info {
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.connected .contact .info div {
+  width: 90%;
+}
+}
